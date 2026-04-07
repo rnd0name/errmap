@@ -11,7 +11,7 @@ class ErrMap:
         self._errors = []
         try :
             if filepath == None:
-                self._filepath = '.'.join(__file__.replace('\\','/').split('/')[-1].split('.')[:-1])
+                self._filepath = '.'.join(__file__.replace('\\','/').split('/')[-1].split('.')[:-1])+'.json'
             else :
                 self.filepath = filepath
         except Exception:
