@@ -10,9 +10,12 @@ class ErrMap:
         self.active = True
         self._errors = []
         try :
-            self._filepath = '.'.join(__file__.replace('\\','/').split('/')[-1].split('.')[:-1])
+            if filepath == None:
+                self._filepath = '.'.join(__file__.replace('\\','/').split('/')[-1].split('.')[:-1])
+            else :
+                self.filepath = filepath
         except Exception:
-            pass
+            self.filepath = filepath
 
     def _build_json_data(self, etype, value, tb):
         """Convert error to JSON-serializable dict"""
